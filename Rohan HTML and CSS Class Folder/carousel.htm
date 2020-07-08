@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carousel</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <div class="w3-bottombar w3-leftbar w3-rightbar w3-topbar w3-border-blue">
+        <button class="w3-button w3-display-left" onclick="plusDivs(-1)">&#10094;</button>        <img class="mySlides"  src="https://i.ytimg.com/vi/PxzPK-s90Lo/maxresdefault.jpg">       <button class="w3-button w3-display-right" onclick="plusDivs(+1)">&#10095;</button>
+        <img class="mySlides" src="https://2.bp.blogspot.com/-egOH8RkBAu0/UQfDNRSwC9I/AAAAAAAAeps/5Ay3wbD0Ihk/s1600/ice-snowy-rocks-mountains-hd-background-wallpapers-widescreen-high-resolutions-025.jpg">
+      </div>
+       
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
+        
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+        
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length} ;
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          x[slideIndex-1].style.display = "block";
+        }
+           </script>
+        
+        
+        <script>
+            var slideIndex = 0;
+        carousel();
+        
+        function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > x.length) {slideIndex = 1}
+          x[slideIndex-1].style.display = "block";
+          setTimeout(carousel, 5000); // Change image every 5 seconds
+        }
+        </script>
+        
+           <style>
+            body{
+                background-color: lightblue;
+            }
+            btn btn-light{
+              background-color: blue;
+            }
+        </style>
+
+       <form action="index.htm"><button class="btn btn-light">Go back to the home page</button></form>
+
+</body>
+</html>
